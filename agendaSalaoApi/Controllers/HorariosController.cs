@@ -1,5 +1,5 @@
-﻿using agendaSalaoApi.Models;
-using agendaSalaoApi.Repositories;
+﻿using agendaSalaoApi.Interfaces;
+using agendaSalaoApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace agendaSalaoApi.Controllers

@@ -1,4 +1,5 @@
-﻿using agendaSalaoApi.Models;
+﻿using agendaSalaoApi.Interfaces;
+using agendaSalaoApi.Models;
 using Dapper;
 using MySql.Data.MySqlClient;
 
