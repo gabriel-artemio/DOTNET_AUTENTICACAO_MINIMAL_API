@@ -1,25 +1,19 @@
-using agendaSalaoApi.Interfaces;
-using agendaSalaoApi.Repositories;
-using Microsoft.OpenApi.Models;
+﻿var builder = WebApplication.CreateBuilder(args);
 
-var builder = WebApplication.CreateBuilder(args);
-
+// Adiciona servi�os ao cont�iner.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<IHorarioRepository, HorarioRepository>();
-builder.Services.AddScoped<IServicosRepository, ServicoRepository>();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AgendaSalao", Version = "v1" });
-});
+builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<agendaSalaoApi.Services.ServicoService>();
+
+// Adiciona servi�os CORS e configura a pol�tica
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins", builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-    });
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder
+            .WithOrigins("http://localhost:3000") // substitua com a URL do seu cliente
+            .AllowAnyHeader()
+            .AllowAnyMethod());
 });
 
 var app = builder.Build();
@@ -30,8 +24,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Adiciona o middleware CORS no pipeline de requisi��o
+app.UseCors("AllowSpecificOrigin");
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
-app.UseCors("AllowAllOrigins");
 app.MapControllers();
 app.Run();

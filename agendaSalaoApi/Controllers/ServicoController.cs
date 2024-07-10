@@ -1,4 +1,5 @@
-﻿using agendaSalaoApi.Interfaces;
+﻿using agendaSalaoApi.Models;
+using agendaSalaoApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace agendaSalaoApi.Controllers
@@ -7,18 +8,17 @@ namespace agendaSalaoApi.Controllers
     [ApiController]
     public class ServicoController : ControllerBase
     {
-        private readonly IServicosRepository _repository;
+        private readonly ServicoService _service;
 
-        public ServicoController(IServicosRepository repository)
+        public ServicoController(ServicoService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetHorarios()
+        public ActionResult<IEnumerable<Servico>> GetAll()
         {
-            var servicos = await _repository.GetServicos();
-            return Ok(servicos);
+            return _service.GetAll();
         }
     }
 }

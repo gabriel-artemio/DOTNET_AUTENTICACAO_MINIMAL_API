@@ -2,8 +2,8 @@
 {
     public class Servico
     {
-        public int Id { get; set; }
-        public string? Nome { get; set; }
-        public decimal Preco { get; set; }
+        public int cd_servico { get; set; }
+        public string? nm_servico { get; set; }
+        public decimal valor { get; set; }
     }
 }
