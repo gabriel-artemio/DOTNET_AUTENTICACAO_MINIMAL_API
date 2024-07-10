@@ -20,5 +20,16 @@ namespace agendaSalaoApi.Controllers
         {
             return _service.GetAll();
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Servico> GetById(int id)
+        {
+            var servico = _service.GetById(id);
+
+            if (servico == null)
+                return NotFound();
+
+            return servico;
+        }
     }
 }
