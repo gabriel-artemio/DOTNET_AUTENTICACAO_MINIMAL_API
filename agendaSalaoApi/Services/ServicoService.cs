@@ -15,7 +15,6 @@ namespace agendaSalaoApi.Services
         public List<Servico> GetAll()
         {
             var servicos = new List<Servico>();
-
             using var connection = new MySqlConnection(_connectionString);
             connection.Open();
 
@@ -32,7 +31,6 @@ namespace agendaSalaoApi.Services
                     valor = reader.GetDecimal("valor")
                 });
             }
-
             return servicos;
         }
         public Servico GetById(int cd_servico)
@@ -56,8 +54,42 @@ namespace agendaSalaoApi.Services
                     valor = reader.GetDecimal("valor")
                 };
             }
-
             return servico;
+        }
+        public void Insert(Servico servico)
+        {
+            using var connection = new MySqlConnection(_connectionString);
+            connection.Open();
+
+            string sql = "INSERT INTO servico (nm_servico, valor) VALUES (@nm_servico, @valor)";
+            using var cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@nm_servico", servico.nm_servico);
+            cmd.Parameters.AddWithValue("@valor", servico.valor);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Update(int cd_servico, Servico servico)
+        {
+            using var connection = new MySqlConnection(_connectionString);
+            connection.Open();
+
+            string sql = "UPDATE servico SET nm_servico = @nm_servico, valor = @valor WHERE cd_servico = @cd_servico";
+            using var cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@cd_servico", cd_servico);
+            cmd.Parameters.AddWithValue("@nm_servico", servico.nm_servico);
+            cmd.Parameters.AddWithValue("@valor", servico.valor);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Delete(int cd_servico)
+        {
+            using var connection = new MySqlConnection(_connectionString);
+            connection.Open();
+
+            string sql = "DELETE FROM servico WHERE cd_servico = @cd_servico";
+            using var cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@cd_servico", cd_servico);
+            cmd.ExecuteNonQuery();
         }
     }
 }

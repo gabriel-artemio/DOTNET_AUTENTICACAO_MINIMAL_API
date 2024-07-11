@@ -31,5 +31,36 @@ namespace agendaSalaoApi.Controllers
 
             return servico;
         }
+        [HttpPost]
+        public IActionResult Create(Servico servico)
+        {
+            _service.Insert(servico);
+            return CreatedAtAction(nameof(GetById), new { id = servico.cd_servico }, servico);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Servico servico)
+        {
+            if (id != servico.cd_servico)
+                return BadRequest();
+
+            var existingServico = _service.GetById(id);
+            if (existingServico == null)
+                return NotFound();
+
+            _service.Update(id, servico);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var servico = _service.GetById(id);
+            if (servico == null)
+                return NotFound();
+
+            _service.Delete(id);
+            return NoContent();
+        }
     }
 }
