@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "c063240c-dbc4-4b56-b6e6-51b4a8f1c1d6",
+		"name": "SalaoWeb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26735814"
+	},
+	"item": [
+		{
+			"name": "Servico",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Servico",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Servico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Servico/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Servico",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nm_servico\": \"Barba\",\r\n    \"valor\": 15.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Servico",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Servico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cd_servico\": 6,\r\n    \"nm_servico\": \"Barba e Bigode\",\r\n    \"valor\": 20.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Servico/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Servico",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://localhost:44312",
+			"type": "string"
+		}
+	]
+}
