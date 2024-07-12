@@ -24,18 +24,38 @@ namespace agendaSalaoApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<Horario> GetById(int id)
         {
-            var servico = _service.GetById(id);
+            var horario = _service.GetById(id);
 
-            if (servico == null)
+            if (horario == null)
                 return NotFound();
 
-            return servico;
+            return horario;
         }
+        [HttpGet("byHorario/{horaAtendimento}")]
+        public ActionResult<Horario> GetByHorario(string horaAtendimento)
+        {
+            var horario = _service.GetByHorario(horaAtendimento);
+
+            if (horario == null)
+                return NotFound();
+
+            return Ok(horario);
+        }
+
         [HttpPost]
         public IActionResult Create(Horario horario)
         {
-            _service.Insert(horario);
-            return CreatedAtAction(nameof(GetById), new { id = horario.cd_horario }, horario);
+            string? horaAtendimento = horario.horario;
+            var verificaHorario = _service.GetByHorario(horaAtendimento);
+            if (verificaHorario == null)
+            {
+                _service.Insert(horario);
+                return CreatedAtAction(nameof(GetById), new { id = horario.cd_horario }, horario);
+            }
+            else
+            {
+                return Conflict(new { message = "Horário já está reservado. Por favor, escolha outro horário." });
+            }
         }
 
         [HttpPut("{id}")]

@@ -8,5 +8,6 @@
         public string? nome_cliente { get; set; }
         public int cd_servico { get; set; }
         public int cd_salao { get; set; }
+        public string? horario { get; set; }
     }
 }

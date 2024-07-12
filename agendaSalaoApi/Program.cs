@@ -6,6 +6,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<agendaSalaoApi.Services.ServicoService>();
 builder.Services.AddScoped<agendaSalaoApi.Services.SalaoService>();
+builder.Services.AddScoped<agendaSalaoApi.Services.HorarioService>();
 
 // Adiciona servi�os CORS e configura a pol�tica
 builder.Services.AddCors(options =>
