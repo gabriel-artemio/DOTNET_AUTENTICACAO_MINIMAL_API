@@ -1,3 +1,3 @@
-# SalaoWeb API
+# Atendimento API
 
-API desenvolvida para o controle e agendamento de horários para salão de cabelereiro.
+API desenvolvida para o controle e emissão de filas de atendimento.
