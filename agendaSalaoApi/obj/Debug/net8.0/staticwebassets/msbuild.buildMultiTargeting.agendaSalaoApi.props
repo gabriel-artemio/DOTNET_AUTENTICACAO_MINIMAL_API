@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\agendaSalaoApi.props" />
-</Project>
