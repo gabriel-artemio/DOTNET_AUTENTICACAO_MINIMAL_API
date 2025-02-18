@@ -1,3 +1,3 @@
-# Senhas de Atendimento API
+# Integração Arduino
 
-API desenvolvida para o controle e emissão de filas de atendimento.
+API desenvolvida para a integração do arduino com a api dotnet.
