@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using mvc_estacionamento.DAL;
+using mvc_estacionamento.Models;
 using System.Web.Mvc;
 
 namespace mvc_estacionamento.Controllers
@@ -15,7 +13,19 @@ namespace mvc_estacionamento.Controllers
 
         public ActionResult Carros()
         {
-            return View();
+            var dal = new VeiculoDAL();
+            var carros = dal.ListarVeiculos();
+
+            return View(carros);
+        }
+
+        [HttpPost]
+        public ActionResult Carros(Veiculo veiculo)
+        {
+            var dal = new VeiculoDAL();
+            dal.Inserir(veiculo);
+
+            return RedirectToAction("Carros");
         }
 
         public ActionResult Vagas()
