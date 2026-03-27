@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Modal Entrada de Veículo-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Registrar Entrada de Veículo</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success">Registrar Entrada</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Saída de Veículo-->
+<div class="modal fade" id="modalSaida" tabindex="-1" role="dialog" aria-labelledby="modalSaida">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Registrar Saída de Veículo</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success">Registrar Saída</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2><b>Total de Vagas</b></h2>
+        <h1><b><span class="label label-warning">3</span></b></h1>
+    </div>
+    <div class="col-md-4">
+        <h2><b>Vagas Ocupadas</b></h2>
+        <h1><b><span class="label label-danger">0</span></b></h1>
+    </div>
+    <div class="col-md-4">
+        <h2><b>Vagas Livres</b></h2>
+        <h1><b><span class="label label-success">3</span></b></h1>
+    </div>
+</div>
+
+<h3>Registrar Entrada de Veículo</h3>
+<button class="btn btn-success" data-toggle="modal" data-target="#myModal">Entrada de Veículo <i class="bi bi-arrow-down-right-square"></i></button>
+
+<h3>Controle das Vagas</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Cód.</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Vaga</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Marco Aurélio</td>
+            <td>VW Parati</td>
+            <td>GTA1234</td>
+            <td>1</td>
+            <td>Ocupada</td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Gabriel Henrique</td>
+            <td>Hyundai HB20</td>
+            <td>JGV1234</td>
+            <td>2</td>
+            <td>Ocupada</td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Fernando Henrique</td>
+            <td>Palio Weekend</td>
+            <td>AFI1234</td>
+            <td>3</td>
+            <td>Ocupada</td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
+        </tr>
+    </tbody>
+</table>
