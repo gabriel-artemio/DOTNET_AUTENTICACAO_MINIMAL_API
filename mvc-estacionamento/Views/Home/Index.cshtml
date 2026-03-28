@@ -1,5 +1,8 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using mvc_estacionamento.Models
+@model ModelsHome
+
+@{
+    ViewBag.Title = "Início";
 }
 
 <!-- Modal Entrada de Veículo-->
@@ -13,27 +16,25 @@
             <div class="modal-body">
                 @using (Html.BeginForm("Carros", "Home", FormMethod.Post))
                 {
-                    <form class="form-inline">
-                        <label>Selecione o Veículo</label>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                <form class="form-inline">
+                    <label>Selecione o Veículo</label>
+                    <select class="form-control">
+                        @foreach (var item in @Model.Veiculos)
+                        {
+                            <option>@item.placa</option>
+                        }
+                    </select><br/>
 
-                        <label>Selecione a Vaga</label>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </form>
+                    <label>Selecione a Vaga</label>
+                    <select class="form-control">
+                        @foreach (var item in @Model.Vagas)
+                        {
+                            <option value=@item.id>Vaga Nº @item.numero</option>
+                        }
+                    </select>
+                </form>
                 }
-                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                 <button type="button" class="btn btn-success">Registrar Entrada</button>
@@ -62,27 +63,53 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2 class="text-center"><b>Total de Vagas</b></h2>
-        <h1><b><span class="label label-warning center-block">
-            <i class="bi bi-building-fill"></i> 3
-            </span></b>
-        </h1>
-    </div>
-    <div class="col-md-4">
-        <h2 class="text-center"><b>Vagas Ocupadas</b></h2>
-        <h1><b><span class="label label-danger center-block">
-            <i class="bi bi-car-front"></i> 0
-            </span></b>
-        </h1>
-    </div>
-    <div class="col-md-4">
-        <h2 class="text-center"><b>Vagas Livres</b></h2>
-        <h1><b><span class="label label-success center-block">
-            <i class="bi bi-building-fill-check"></i> 3
-            </span></b>
-        </h1>
-    </div>
+    @if (Model != null)
+    {
+        <div class="col-md-4">
+            <h2 class="text-center"><b>Total de Vagas</b></h2>
+            <h1>
+                <b>
+                    <span class="label label-warning center-block">
+                        <i class="bi bi-building-fill"></i> @Model.StatusVagas.total_vagas
+                    </span>
+                </b>
+            </h1>
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-center"><b>Vagas Ocupadas</b></h2>
+            <h1>
+                <b>
+                    <span class="label label-danger center-block">
+                        <i class="bi bi-car-front"></i> @Model.StatusVagas.ocupadas
+                    </span>
+                </b>
+            </h1>
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-center"><b>Vagas Livres</b></h2>
+            <h1>
+                <b>
+                    <span class="label label-success center-block">
+                        <i class="bi bi-building-fill-check"></i> @Model.StatusVagas.livres
+                    </span>
+                </b>
+            </h1>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-12">
+            <h2 class="text-center"><b>Atenção</b></h2>
+            <h1>
+                <b>
+                    <span class="label label-warning center-block">
+                        <i class="bi bi-exclamation-triangle"></i> Nenhuma vaga foi encontrada
+                    </span>
+                </b>
+            </h1>
+        </div>
+    }
+
 </div>
 
 <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Registrar Entrada de Veículo <i class="bi bi-arrow-down-right-square"></i></button>

@@ -2,7 +2,9 @@
 {
     public class Vagas
     {
-
+        public int id { get; set; }
+        public int numero { get; set; }
+        public string status { get; set; }
     }
     public class StatusVagas
     {

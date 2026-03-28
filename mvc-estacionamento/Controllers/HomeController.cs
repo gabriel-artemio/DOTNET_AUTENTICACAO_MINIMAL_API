@@ -8,7 +8,17 @@ namespace mvc_estacionamento.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var vagasDal = new VagasDAL();
+            var veiculosDal = new VeiculoDAL();
+
+            var vm = new ModelsHome
+            {
+                StatusVagas = vagasDal.ListarStatusVagas(),
+                Veiculos = veiculosDal.ListarVeiculos(),
+                Vagas = vagasDal.ListarVagas()
+            };
+
+            return View(vm);
         }
 
         public ActionResult Carros()
