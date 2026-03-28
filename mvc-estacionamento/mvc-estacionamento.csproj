@@ -169,10 +169,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovimentacaoController.cs" />
+    <Compile Include="DAL\MovimentacaoDAL.cs" />
+    <Compile Include="DAL\VagasDAL.cs" />
     <Compile Include="DAL\VeiculoDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Movimentacao.cs" />
+    <Compile Include="Models\Vagas.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -212,6 +217,7 @@
     <Content Include="Views\Home\Vagas.cshtml" />
     <Content Include="Views\Home\Carros.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Movimentacao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

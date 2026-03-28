@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tickets</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Cód.</th>
+            <th scope="col">Nº Vaga</th>
+            <th scope="col">Hora Entrada</th>
+            <th scope="col">Hora Saída</th>
+            <th scope="col">Valor Total</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Marco Aurélio</td>
+            <td>VW Parati</td>
+            <td>GTA1234</td>
+            <td>1</td>
+            <td>Ocupada</td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Gabriel Henrique</td>
+            <td>Hyundai HB20</td>
+            <td>JGV1234</td>
+            <td>2</td>
+            <td>Ocupada</td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Fernando Henrique</td>
+            <td>Palio Weekend</td>
+            <td>AFI1234</td>
+            <td>3</td>
+            <td>Ocupada</td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
+        </tr>
+    </tbody>
+</table>

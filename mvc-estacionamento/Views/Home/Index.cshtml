@@ -11,8 +11,29 @@
                 <h4 class="modal-title" id="myModalLabel">Registrar Entrada de Veículo</h4>
             </div>
             <div class="modal-body">
-                ...
-            </div>
+                @using (Html.BeginForm("Carros", "Home", FormMethod.Post))
+                {
+                    <form class="form-inline">
+                        <label>Selecione o Veículo</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+
+                        <label>Selecione a Vaga</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </form>
+                }
+                </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                 <button type="button" class="btn btn-success">Registrar Entrada</button>
@@ -42,21 +63,29 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2><b>Total de Vagas</b></h2>
-        <h1><b><span class="label label-warning">3</span></b></h1>
+        <h2 class="text-center"><b>Total de Vagas</b></h2>
+        <h1><b><span class="label label-warning center-block">
+            <i class="bi bi-building-fill"></i> 3
+            </span></b>
+        </h1>
     </div>
     <div class="col-md-4">
-        <h2><b>Vagas Ocupadas</b></h2>
-        <h1><b><span class="label label-danger">0</span></b></h1>
+        <h2 class="text-center"><b>Vagas Ocupadas</b></h2>
+        <h1><b><span class="label label-danger center-block">
+            <i class="bi bi-car-front"></i> 0
+            </span></b>
+        </h1>
     </div>
     <div class="col-md-4">
-        <h2><b>Vagas Livres</b></h2>
-        <h1><b><span class="label label-success">3</span></b></h1>
+        <h2 class="text-center"><b>Vagas Livres</b></h2>
+        <h1><b><span class="label label-success center-block">
+            <i class="bi bi-building-fill-check"></i> 3
+            </span></b>
+        </h1>
     </div>
 </div>
 
-<h3>Registrar Entrada de Veículo</h3>
-<button class="btn btn-success" data-toggle="modal" data-target="#myModal">Entrada de Veículo <i class="bi bi-arrow-down-right-square"></i></button>
+<button class="btn btn-success" data-toggle="modal" data-target="#myModal">Registrar Entrada de Veículo <i class="bi bi-arrow-down-right-square"></i></button>
 
 <h3>Controle das Vagas</h3>
 

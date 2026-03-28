@@ -28,6 +28,15 @@ namespace mvc_estacionamento.Controllers
             return RedirectToAction("Carros");
         }
 
+        [HttpPost]
+        public ActionResult RegistrarEntrada(Veiculo veiculo)
+        {
+            var dal = new VeiculoDAL();
+            dal.Inserir(veiculo);
+
+            return RedirectToAction("Carros");
+        }
+
         public ActionResult Vagas()
         {
             return View();
