@@ -7,7 +7,10 @@ namespace mvc_estacionamento.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var dal = new MovimentacaoDAL();
+            var tickets = dal.ListarMovimentacoes();
+
+            return View(tickets);
         }
     }
 }

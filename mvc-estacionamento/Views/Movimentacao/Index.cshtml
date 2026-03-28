@@ -1,4 +1,6 @@
-﻿
+﻿@using mvc_estacionamento.Models
+@model List<Movimentacao>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -9,7 +11,9 @@
     <thead>
         <tr>
             <th scope="col">Cód.</th>
-            <th scope="col">Nº Vaga</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Nº da Vaga</th>
             <th scope="col">Hora Entrada</th>
             <th scope="col">Hora Saída</th>
             <th scope="col">Valor Total</th>
@@ -18,32 +22,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Marco Aurélio</td>
-            <td>VW Parati</td>
-            <td>GTA1234</td>
-            <td>1</td>
-            <td>Ocupada</td>
-            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Gabriel Henrique</td>
-            <td>Hyundai HB20</td>
-            <td>JGV1234</td>
-            <td>2</td>
-            <td>Ocupada</td>
-            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Fernando Henrique</td>
-            <td>Palio Weekend</td>
-            <td>AFI1234</td>
-            <td>3</td>
-            <td>Ocupada</td>
-            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSaida">Liberar Vaga <i class="bi bi-capslock-fill"></i></button></td>
-        </tr>
+        @foreach (var movimentacao in Model)
+        {
+            <tr>
+                <td>@movimentacao.id</td>
+                <td>@movimentacao.modelo</td>
+                <td>@movimentacao.placa</td>
+                <td>@movimentacao.vaga_id</td>
+                <td>@movimentacao.data_entrada</td>
+                <td>@movimentacao.data_saida</td>
+                <td>R$ @movimentacao.valor_pago</td>
+                <td>@movimentacao.status</td>
+            </tr>
+        }
     </tbody>
 </table>
