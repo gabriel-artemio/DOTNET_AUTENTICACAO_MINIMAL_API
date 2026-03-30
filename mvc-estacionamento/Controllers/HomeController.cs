@@ -44,7 +44,7 @@ namespace mvc_estacionamento.Controllers
             var dal = new VeiculoDAL();
             dal.Inserir(veiculo);
 
-            return RedirectToAction("Carros");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Vagas()
