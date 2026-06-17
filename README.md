@@ -1,3 +1,3 @@
-# ASP.NET MVC - Gerenciador de Estacionamento
+# Gerenciador de Estacionamento
 
-Aplicação ASP.NET MVC desenvolvida para o gerenciamento de um estacionamento.
+API Dotnet desenvolvida para o gerenciamento de um estacionamento.
