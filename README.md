@@ -1,3 +1,3 @@
-# Gerenciador de Estacionamento
+# Autenticação em Minimal API
 
-API Dotnet desenvolvida para o gerenciamento de um estacionamento.
+Como criar uma minimal API e adicionar um AuthGuard para proteger as rotas e a implementação da lógica do guard.
