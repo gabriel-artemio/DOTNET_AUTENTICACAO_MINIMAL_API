@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\meus_projetos\\teste\\DOTNET_AUTENTICACAO_MINIMAL_API\\AuthMinimalApi\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3C74561-44AB-4FE2-8675-BD16AB5F8CBF}|AuthMinimalApi.csproj|c:\\meus_projetos\\teste\\dotnet_autenticacao_minimal_api\\authminimalapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3C74561-44AB-4FE2-8675-BD16AB5F8CBF}|AuthMinimalApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3C74561-44AB-4FE2-8675-BD16AB5F8CBF}|AuthMinimalApi.csproj|c:\\meus_projetos\\teste\\dotnet_autenticacao_minimal_api\\authminimalapi\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3C74561-44AB-4FE2-8675-BD16AB5F8CBF}|AuthMinimalApi.csproj|solutionrelative:models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3C74561-44AB-4FE2-8675-BD16AB5F8CBF}|AuthMinimalApi.csproj|c:\\meus_projetos\\teste\\dotnet_autenticacao_minimal_api\\authminimalapi\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3C74561-44AB-4FE2-8675-BD16AB5F8CBF}|AuthMinimalApi.csproj|solutionrelative:models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +22,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\meus_projetos\\teste\\DOTNET_AUTENTICACAO_MINIMAL_API\\AuthMinimalApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\meus_projetos\\teste\\DOTNET_AUTENTICACAO_MINIMAL_API\\AuthMinimalApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T20:21:49.523Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -26,6 +53,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\meus_projetos\\teste\\DOTNET_AUTENTICACAO_MINIMAL_API\\AuthMinimalApi\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
+              "ToolTip": "C:\\meus_projetos\\teste\\DOTNET_AUTENTICACAO_MINIMAL_API\\AuthMinimalApi\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T20:31:13.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\meus_projetos\\teste\\DOTNET_AUTENTICACAO_MINIMAL_API\\AuthMinimalApi\\Models\\Produto.cs",
+              "RelativeDocumentMoniker": "Models\\Produto.cs",
+              "ToolTip": "C:\\meus_projetos\\teste\\DOTNET_AUTENTICACAO_MINIMAL_API\\AuthMinimalApi\\Models\\Produto.cs",
+              "RelativeToolTip": "Models\\Produto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T20:20:05.621Z",
+              "EditorCaption": ""
             }
           ]
         }

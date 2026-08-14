@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AuthMinimalApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2860f65d7934d3852d7f6257a66c174bbe973961")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e57b66465a3ebd4d29c3ad2123b6b81de694834c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AuthMinimalApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AuthMinimalApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
