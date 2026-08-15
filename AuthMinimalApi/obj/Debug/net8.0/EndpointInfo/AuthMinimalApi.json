@@ -1,0 +1,74 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AuthMinimalApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "AuthMinimalApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/produtos": {
+      "get": {
+        "tags": [
+          "AuthMinimalApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Informe o token JWT.",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
